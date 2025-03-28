@@ -1,45 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>QR Code Interaction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        button {
-            padding: 12px 24px;
-            margin: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #proceed {
-            background: #4CAF50;
-            color: white;
-        }
-        #cancel {
-            background: #f44336;
-            color: white;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Interactive</title>
 </head>
 <body>
-    <h1>Choose an Action</h1>
-    <button id="proceed">Proceed</button>
-    <button id="cancel">Cancel</button>
+    <h1>QR Code Scanned</h1>
+    <button onclick="proceed()">Proceed</button>
 
     <script>
-        document.getElementById("proceed").addEventListener("click", () => {
-            alert("✅ Proceeded!");
-            // Optional: Add Firebase or other backend logging here
-        });
-
-        document.getElementById("cancel").addEventListener("click", () => {
-            alert("❌ Cancelled");
-        });
+        function proceed() {
+            fetch("/proceed")
+                .then(response => response.text())
+                .then(data => console.log(data));  // Logs in the browser console
+        }
     </script>
 </body>
 </html>
