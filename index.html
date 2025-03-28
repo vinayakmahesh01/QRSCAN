@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #proceed {
+            background: #4CAF50;
+            color: white;
+        }
+        #cancel {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose an Action</h1>
+    <button id="proceed">Proceed</button>
+    <button id="cancel">Cancel</button>
+
+    <script>
+        document.getElementById("proceed").addEventListener("click", () => {
+            alert("✅ Proceeded!");
+            // Optional: Add Firebase or other backend logging here
+        });
+
+        document.getElementById("cancel").addEventListener("click", () => {
+            alert("❌ Cancelled");
+        });
+    </script>
+</body>
+</html>
